@@ -1,0 +1,137 @@
+.login {
+  display: flex;
+  min-height: 100vh;
+  background-color: $white;
+
+  &__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-xxl;
+    background-color: $white;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    width: 173.76px;
+    height: 36px;
+    margin-bottom: 100px;
+  }
+
+  &__illustration {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  &__right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-lg;
+    background-color: $white;
+  }
+
+  &__form-container {
+    width: 100%;
+    max-width: 447px;
+
+    @media (max-width: $tablet) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-xlarge;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: $spacing-sm;
+    letter-spacing: -0.04em;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    color: $text-light;
+    margin-bottom: $spacing-xxl;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__error {
+    padding: $spacing-md;
+    background-color: #fee;
+    color: $error-color;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-small;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid $border-color;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    color: $text-light;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: #a0a0a0;
+    }
+
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+
+  &__password-wrapper {
+    position: relative;
+  }
+
+  &__show-password {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: $primary-color;
+    font-size: $font-size-small;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+
+  &__forgot {
+    font-size: $font-size-small;
+    font-weight: 600;
+    color: $primary-color;
+    letter-spacing: 0.1em;
+    margin-top: -$spacing-sm;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 16px;
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: $spacing-sm;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

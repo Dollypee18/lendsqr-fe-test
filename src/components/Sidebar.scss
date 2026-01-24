@@ -1,0 +1,125 @@
+.sidebar {
+  width: 283px;
+  height: 100vh;
+  background-color: $white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+  padding: $spacing-lg 0;
+  overflow-y: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  transition: transform 0.3s ease;
+
+  @media (max-width: $desktop) {
+    transform: translateX(-100%);
+
+    &--open {
+      transform: translateX(0);
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(33, 63, 125, 0.2);
+    border-radius: 4px;
+  }
+
+  &__overlay {
+    display: none;
+
+    @media (max-width: $desktop) {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 199;
+    }
+  }
+
+  &__org {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-md $spacing-xl;
+    margin-bottom: $spacing-xl;
+    cursor: pointer;
+
+    span {
+      font-size: $font-size-medium;
+      color: $text-dark;
+      flex: 1;
+    }
+
+    svg:last-child {
+      flex-shrink: 0;
+    }
+  }
+
+  &__section {
+    margin-bottom: $spacing-xl;
+  }
+
+  &__section-title {
+    font-size: $font-size-small;
+    font-weight: 500;
+    color: $text-light;
+    padding: 0 $spacing-xl;
+    margin-bottom: $spacing-md;
+    letter-spacing: 0.1em;
+  }
+
+  &__menu-item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-md $spacing-xl;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+
+    svg {
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    span {
+      font-size: $font-size-medium;
+      color: $text-light;
+    }
+
+    &:hover {
+      background-color: rgba(33, 63, 125, 0.02);
+    }
+
+    &--active {
+      background-color: rgba(57, 205, 204, 0.06);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background-color: $primary-color;
+      }
+
+      svg {
+        opacity: 1;
+      }
+
+      span {
+        color: $text-dark;
+        font-weight: 500;
+      }
+    }
+
+    &--dashboard {
+      margin-bottom: $spacing-lg;
+    }
+  }
+}

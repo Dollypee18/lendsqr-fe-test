@@ -1,0 +1,305 @@
+.users-table {
+  background-color: $white;
+  border-radius: $border-radius-sm;
+  box-shadow: $shadow-md;
+  overflow: hidden;
+
+  &__wrapper {
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+
+    thead {
+      background-color: $white;
+
+      tr {
+        border-bottom: 1px solid $border-color;
+
+        th {
+          padding: $spacing-md $spacing-lg;
+          text-align: left;
+          font-size: $font-size-small;
+          font-weight: 600;
+          color: $text-light;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid $border-color;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: rgba(33, 63, 125, 0.02);
+        }
+
+        td {
+          padding: $spacing-lg;
+          font-size: $font-size-base;
+          color: $text-light;
+        }
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__filter-btn {
+    background: none;
+    padding: $spacing-xs;
+    display: flex;
+    align-items: center;
+  }
+
+  &__actions {
+    position: relative;
+  }
+
+  &__menu-btn {
+    background: none;
+    padding: $spacing-sm;
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    box-shadow: $shadow-lg;
+    padding: $spacing-sm 0;
+    z-index: 10;
+    min-width: 180px;
+
+    button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: $spacing-md;
+      padding: $spacing-md $spacing-lg;
+      background: none;
+      text-align: left;
+      font-size: $font-size-base;
+      color: $text-dark;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: rgba(33, 63, 125, 0.05);
+      }
+    }
+  }
+}
+
+.status {
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: $font-size-small;
+  font-weight: 400;
+  display: inline-block;
+
+  &--active {
+    background-color: rgba(57, 205, 98, 0.06);
+    color: $status-active;
+  }
+
+  &--inactive {
+    background-color: rgba(84, 95, 125, 0.06);
+    color: $status-inactive;
+  }
+
+  &--pending {
+    background-color: rgba(233, 178, 0, 0.06);
+    color: $status-pending;
+  }
+
+  &--blacklisted {
+    background-color: rgba(228, 3, 59, 0.06);
+    color: $status-blacklisted;
+  }
+}
+
+.filter-modal {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  box-shadow: $shadow-lg;
+  padding: $spacing-xl;
+  z-index: 100;
+  min-width: 270px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    label {
+      font-size: $font-size-base;
+      font-weight: 500;
+      color: $text-light;
+    }
+
+    input,
+    select {
+      padding: 12px 16px;
+      border: 1px solid $border-color;
+      border-radius: $border-radius-md;
+      font-size: $font-size-base;
+      color: $text-light;
+
+      &::placeholder {
+        color: #a0a0a0;
+      }
+
+      &:focus {
+        border-color: $primary-color;
+      }
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23213F7D' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 40px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-md;
+  }
+
+  &__reset {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid $text-dark;
+    background-color: $white;
+    color: $text-dark;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    font-weight: 600;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: rgba(33, 63, 125, 0.05);
+    }
+  }
+
+  &__filter {
+    flex: 1;
+    padding: 12px;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    font-weight: 600;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-lg $spacing-xl;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    font-size: $font-size-base;
+    color: $text-light;
+
+    select {
+      padding: 8px 40px 8px 16px;
+      border: 1px solid $border-color;
+      border-radius: $border-radius-sm;
+      font-size: $font-size-base;
+      color: $text-dark;
+      background-color: rgba(33, 63, 125, 0.1);
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23213F7D' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      font-weight: 500;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__nav {
+    padding: $spacing-sm;
+    background-color: rgba(33, 63, 125, 0.1);
+    border-radius: $border-radius-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+
+  &__page {
+    min-width: 32px;
+    height: 32px;
+    padding: $spacing-sm;
+    background: none;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-base;
+    color: $text-light;
+    transition: background-color 0.2s;
+
+    &:hover:not(&--active) {
+      background-color: rgba(33, 63, 125, 0.05);
+    }
+
+    &--active {
+      background-color: rgba(33, 63, 125, 0.1);
+      color: $text-dark;
+      font-weight: 500;
+    }
+  }
+
+  &__dots {
+    color: $text-light;
+    padding: 0 $spacing-xs;
+  }
+}

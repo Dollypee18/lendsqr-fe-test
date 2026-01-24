@@ -1,0 +1,134 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-lg $spacing-xl;
+  background-color: $white;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  @media (max-width: $tablet) {
+    padding: $spacing-md;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    flex: 1;
+  }
+
+  &__menu-btn {
+    display: none;
+    background: none;
+    padding: $spacing-sm;
+
+    @media (max-width: $desktop) {
+      display: block;
+    }
+  }
+
+  &__logo {
+    width: 144.8px;
+    height: 30px;
+
+    @media (max-width: $desktop) {
+      width: 115px;
+      height: 24px;
+    }
+  }
+
+  &__search {
+    display: flex;
+    max-width: 400px;
+    flex: 1;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__search-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid rgba(33, 63, 125, 0.2);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    font-size: $font-size-base;
+
+    &::placeholder {
+      color: #a0a0a0;
+    }
+  }
+
+  &__search-btn {
+    padding: 12px 20px;
+    background-color: $primary-color;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xl;
+
+    @media (max-width: $tablet) {
+      gap: $spacing-md;
+    }
+  }
+
+  &__docs {
+    font-size: $font-size-medium;
+    color: $text-dark;
+    text-decoration: underline;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__notification {
+    background: none;
+    padding: $spacing-sm;
+    position: relative;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @media (max-width: $mobile) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__username {
+    font-size: $font-size-medium;
+    color: $text-dark;
+    font-weight: 500;
+  }
+}

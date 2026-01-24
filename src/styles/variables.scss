@@ -1,0 +1,54 @@
+// Colors
+$primary-color: #39cdcc;
+$text-dark: #213f7d;
+$text-light: #545f7d;
+$border-color: #e5e5e5;
+$bg-light: #f5f5f5;
+$white: #ffffff;
+$error-color: #e4033b;
+$success-color: #39cd62;
+$warning-color: #ffa500;
+$inactive-color: #545f7d;
+
+// Status colors
+$status-active: #39cd62;
+$status-inactive: #545f7d;
+$status-pending: #e9b200;
+$status-blacklisted: #e4033b;
+
+// Typography
+$font-family:
+  "Work Sans",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  sans-serif;
+$font-size-base: 14px;
+$font-size-small: 12px;
+$font-size-medium: 16px;
+$font-size-large: 24px;
+$font-size-xlarge: 40px;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$wide: 1440px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 3px 5px rgba(0, 0, 0, 0.04);
+$shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 24px;

@@ -1,0 +1,28 @@
+.stats-card {
+  background-color: $white;
+  padding: $spacing-xl;
+  border-radius: $border-radius-sm;
+  box-shadow: $shadow-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__title {
+    font-size: $font-size-base;
+    font-weight: 500;
+    color: $text-light;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__value {
+    font-size: $font-size-large;
+    font-weight: 600;
+    color: $text-dark;
+  }
+}

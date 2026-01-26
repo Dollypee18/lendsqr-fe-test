@@ -6,12 +6,28 @@
 
   &__wrapper {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+
+    @media (max-width: $mobile) {
+      overflow-x: scroll;
+    }
   }
 
   &__table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 800px;
+    min-width: 600px;
+
+    @media (max-width: $mobile) {
+      min-width: 650px;
+      font-size: 11px;
+    }
+
+    @media (max-width: $tablet) {
+      min-width: 800px;
+      font-size: 13px;
+    }
 
     thead {
       background-color: $white;

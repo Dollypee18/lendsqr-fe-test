@@ -153,29 +153,48 @@
     color: $status-blacklisted;
   }
 }
-
 .filter-modal {
-  position: absolute;
-  left: -120px;
-  top: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background-color: $white;
   border: 1px solid $border-color;
   border-radius: $border-radius-sm;
   box-shadow: $shadow-lg;
   padding: $spacing-xl;
-  z-index: 100;
+  z-index: 1000;
   min-width: 270px;
-  margin-top: 8px;
+  max-width: 90vw;
+  max-height: 85vh;
+  overflow-y: auto;
+
+  @media (max-width: $tablet) {
+    min-width: 300px;
+    padding: $spacing-lg;
+  }
 
   @media (max-width: $mobile) {
-    left: -100px;
-    min-width: 250px;
+    min-width: 280px;
+    max-width: 85vw;
+    padding: $spacing-md;
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     gap: $spacing-lg;
+
+    @media (max-width: $mobile) {
+      gap: $spacing-md;
+    }
   }
 
   &__field {
@@ -196,6 +215,7 @@
       border-radius: $border-radius-md;
       font-size: $font-size-base;
       color: $text-light;
+      width: 100%;
 
       &::placeholder {
         color: #a0a0a0;
@@ -203,6 +223,7 @@
 
       &:focus {
         border-color: $primary-color;
+        outline: none;
       }
     }
 
@@ -212,12 +233,14 @@
       background-repeat: no-repeat;
       background-position: right 12px center;
       padding-right: 40px;
+      cursor: pointer;
     }
   }
 
   &__actions {
     display: flex;
     gap: $spacing-md;
+    margin-top: $spacing-sm;
   }
 
   &__reset {
@@ -230,6 +253,7 @@
     font-size: $font-size-base;
     font-weight: 600;
     transition: background-color 0.2s;
+    cursor: pointer;
 
     &:hover {
       background-color: rgba(33, 63, 125, 0.05);
@@ -245,6 +269,8 @@
     font-size: $font-size-base;
     font-weight: 600;
     transition: opacity 0.2s;
+    cursor: pointer;
+    border: none;
 
     &:hover {
       opacity: 0.9;

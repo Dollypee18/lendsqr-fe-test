@@ -68,6 +68,12 @@
     display: flex;
     align-items: center;
     gap: $spacing-sm;
+    position: relative;
+  }
+
+  &__filter-container {
+    position: relative;
+    display: inline-block;
   }
 
   &__filter-btn {
@@ -75,6 +81,7 @@
     padding: $spacing-xs;
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   &__actions {
@@ -149,7 +156,7 @@
 
 .filter-modal {
   position: absolute;
-  left: 0;
+  left: -120px;
   top: 100%;
   background-color: $white;
   border: 1px solid $border-color;
@@ -158,6 +165,12 @@
   padding: $spacing-xl;
   z-index: 100;
   min-width: 270px;
+  margin-top: 8px;
+
+  @media (max-width: $mobile) {
+    left: -100px;
+    min-width: 250px;
+  }
 
   &__content {
     display: flex;

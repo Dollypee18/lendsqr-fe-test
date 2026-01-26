@@ -156,17 +156,31 @@ const UsersTable = ({
               <th>
                 <div className="users-table__header">
                   ORGANIZATION
-                  <button
-                    className="users-table__filter-btn"
-                    onClick={() => setShowFilter(!showFilter)}
-                  >
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path
-                        d="M6.5 12H9.5V10.5H6.5V12ZM1 4V5.5H15V4H1ZM3.5 8.75H12.5V7.25H3.5V8.75Z"
-                        fill="#545F7D"
-                      />
-                    </svg>
-                  </button>
+                  <div className="users-table__filter-container">
+                    <button
+                      className="users-table__filter-btn"
+                      onClick={() => setShowFilter(!showFilter)}
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M6.5 12H9.5V10.5H6.5V12ZM1 4V5.5H15V4H1ZM3.5 8.75H12.5V7.25H3.5V8.75Z"
+                          fill="#545F7D"
+                        />
+                      </svg>
+                    </button>
+                    {showFilter && (
+                      <div className="filter-modal" ref={filterRef}>
+                        <div className="filter-modal__content">
+                          {/* Filter content stays the same */}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </th>
               <th>

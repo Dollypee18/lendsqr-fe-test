@@ -2,12 +2,17 @@
   display: flex;
   min-height: 100vh;
   background-color: $bg-light;
+  overflow-x: hidden;
+  width: 100%;
 
   &__main {
     flex: 1;
     display: flex;
     flex-direction: column;
     margin-left: 283px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 
     @media (max-width: $desktop) {
       margin-left: 0;
@@ -16,9 +21,16 @@
 
   &__content {
     padding: $spacing-xl $spacing-xl $spacing-xxl;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 
     @media (max-width: $tablet) {
       padding: $spacing-lg;
+    }
+
+    @media (max-width: $mobile) {
+      padding: $spacing-md;
     }
   }
 
@@ -35,6 +47,11 @@
     &:hover {
       color: $text-dark;
     }
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-base;
+      margin-bottom: $spacing-lg;
+    }
   }
 
   &__header {
@@ -44,12 +61,17 @@
     margin-bottom: $spacing-xl;
     flex-wrap: wrap;
     gap: $spacing-md;
+    width: 100%;
   }
 
   &__title {
     font-size: $font-size-large;
     font-weight: 500;
     color: $text-dark;
+
+    @media (max-width: $mobile) {
+      font-size: 20px;
+    }
   }
 
   &__actions {
@@ -59,6 +81,7 @@
     @media (max-width: $mobile) {
       width: 100%;
       flex-direction: column;
+      gap: $spacing-md;
     }
   }
 
@@ -69,6 +92,12 @@
     font-weight: 600;
     letter-spacing: 0.05em;
     transition: opacity 0.2s;
+
+    @media (max-width: $mobile) {
+      padding: 10px 16px;
+      font-size: $font-size-small;
+      width: 100%;
+    }
 
     &:hover {
       opacity: 0.9;
@@ -93,6 +122,8 @@
     box-shadow: $shadow-md;
     margin-bottom: $spacing-xl;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 
   &__profile {
@@ -101,11 +132,13 @@
     padding: $spacing-xl;
     gap: $spacing-xl;
     flex-wrap: wrap;
+    width: 100%;
 
     @media (max-width: $tablet) {
       flex-direction: column;
       align-items: flex-start;
       padding: $spacing-lg;
+      gap: $spacing-lg;
     }
   }
 
@@ -118,23 +151,43 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+
+    @media (max-width: $mobile) {
+      width: 80px;
+      height: 80px;
+
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     gap: $spacing-sm;
+    min-width: 0;
+    flex: 1;
   }
 
   &__name {
     font-size: 22px;
     font-weight: 500;
     color: $text-dark;
+
+    @media (max-width: $mobile) {
+      font-size: 18px;
+    }
   }
 
   &__username {
     font-size: $font-size-base;
     color: $text-light;
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-small;
+    }
   }
 
   &__divider {
@@ -156,6 +209,10 @@
   &__tier-label {
     font-size: $font-size-base;
     color: $text-light;
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-small;
+    }
   }
 
   &__stars {
@@ -173,6 +230,10 @@
     font-size: 22px;
     font-weight: 500;
     color: $text-dark;
+
+    @media (max-width: $mobile) {
+      font-size: 18px;
+    }
   }
 
   &__bank-number {
@@ -184,6 +245,7 @@
     display: flex;
     border-top: 1px solid rgba(33, 63, 125, 0.1);
     overflow-x: auto;
+    width: 100%;
 
     &::-webkit-scrollbar {
       height: 0;
@@ -199,10 +261,17 @@
     white-space: nowrap;
     border-bottom: 2px solid transparent;
     transition: all 0.2s;
+    min-width: fit-content;
 
     @media (max-width: $tablet) {
       padding: $spacing-md $spacing-lg;
       font-size: $font-size-base;
+    }
+
+    @media (max-width: $mobile) {
+      padding: $spacing-md;
+      font-size: $font-size-small;
+      flex: 0 0 auto;
     }
 
     &:hover {
@@ -220,18 +289,30 @@
     border-radius: $border-radius-sm;
     box-shadow: $shadow-md;
     padding: $spacing-xl;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 
     @media (max-width: $tablet) {
       padding: $spacing-lg;
+    }
+
+    @media (max-width: $mobile) {
+      padding: $spacing-md;
     }
   }
 
   &__section {
     padding: $spacing-xl 0;
     border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+    width: 100%;
 
     @media (max-width: $tablet) {
       padding: $spacing-lg 0;
+    }
+
+    @media (max-width: $mobile) {
+      padding: $spacing-md 0;
     }
 
     &:first-child {
@@ -249,14 +330,25 @@
     font-weight: 500;
     color: $text-dark;
     margin-bottom: $spacing-xl;
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-base;
+      margin-bottom: $spacing-lg;
+    }
   }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: $spacing-xl;
+    width: 100%;
 
     @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-lg;
+    }
+
+    @media (max-width: $mobile) {
       grid-template-columns: 1fr;
       gap: $spacing-lg;
     }
@@ -266,6 +358,8 @@
     display: flex;
     flex-direction: column;
     gap: $spacing-sm;
+    min-width: 0;
+    word-wrap: break-word;
 
     label {
       font-size: $font-size-small;
@@ -279,6 +373,11 @@
       font-size: $font-size-medium;
       font-weight: 500;
       color: $text-light;
+      word-break: break-word;
+
+      @media (max-width: $mobile) {
+        font-size: $font-size-base;
+      }
     }
   }
 }

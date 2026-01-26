@@ -2,6 +2,10 @@
 
 A React + TypeScript admin dashboard application for managing user data, built as part of the Lendsqr frontend engineer assessment.
 
+## Live Demo
+Live App: https://muhsin-hamzat-lendsqr-fe-test.vercel.app/
+Github Repository: https://github.com/Dollypee18/lendsqr-fe-test
+
 ## Features
 
 - **Login Page**: Simple authentication with email/password validation

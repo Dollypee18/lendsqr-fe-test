@@ -160,37 +160,38 @@
   transform: translate(-50%, -50%);
   background-color: $white;
   border: 1px solid $border-color;
-  border-radius: $border-radius-sm;
-  box-shadow: $shadow-lg;
+  border-radius: $border-radius-md;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   padding: $spacing-xl;
   z-index: 1000;
-  min-width: 270px;
+  width: 450px;
   max-width: 90vw;
   max-height: 85vh;
   overflow-y: auto;
 
   @media (max-width: $tablet) {
-    min-width: 300px;
+    width: 400px;
     padding: $spacing-lg;
   }
 
   @media (max-width: $mobile) {
-    min-width: 280px;
-    max-width: 85vw;
+    width: 340px;
+    max-width: 92vw;
     padding: $spacing-md;
   }
 
   &__overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 999;
+    backdrop-filter: blur(2px);
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: $spacing-lg;
+    gap: $spacing-xl;
 
     @media (max-width: $mobile) {
       gap: $spacing-md;
@@ -205,17 +206,21 @@
     label {
       font-size: $font-size-base;
       font-weight: 500;
-      color: $text-light;
+      color: $text-dark;
+      margin-bottom: 2px;
     }
 
     input,
     select {
-      padding: 12px 16px;
+      padding: 14px 16px;
       border: 1px solid $border-color;
       border-radius: $border-radius-md;
       font-size: $font-size-base;
-      color: $text-light;
+      color: $text-dark;
       width: 100%;
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
 
       &::placeholder {
         color: #a0a0a0;
@@ -224,6 +229,7 @@
       &:focus {
         border-color: $primary-color;
         outline: none;
+        box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.1);
       }
     }
 
@@ -240,12 +246,12 @@
   &__actions {
     display: flex;
     gap: $spacing-md;
-    margin-top: $spacing-sm;
+    margin-top: $spacing-md;
   }
 
   &__reset {
     flex: 1;
-    padding: 12px;
+    padding: 14px;
     border: 1px solid $text-dark;
     background-color: $white;
     color: $text-dark;
@@ -257,12 +263,16 @@
 
     &:hover {
       background-color: rgba(33, 63, 125, 0.05);
+      transform: translateY(-1px);
+    }
+    &:active {
+      transform: translateY(0);
     }
   }
 
   &__filter {
     flex: 1;
-    padding: 12px;
+    padding: 14px;
     background-color: $primary-color;
     color: $white;
     border-radius: $border-radius-md;
@@ -274,6 +284,11 @@
 
     &:hover {
       opacity: 0.9;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(57, 205, 204, 0.3);
+    }
+    &:active {
+      transform: translateY(0);
     }
   }
 }
@@ -285,6 +300,11 @@
   padding: $spacing-lg $spacing-xl;
   flex-wrap: wrap;
   gap: $spacing-md;
+  position: sticky;
+  bottom: 0;
+  background-color: $white;
+  border-top: 1px solid $border-color;
+  z-index: 10;
 
   @media (max-width: $tablet) {
     flex-direction: column;

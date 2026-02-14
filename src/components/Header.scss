@@ -5,11 +5,16 @@
   padding: $spacing-lg $spacing-xl;
   background-color: $white;
   box-shadow: $shadow-sm;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 283px;
+  right: 0;
   z-index: 100;
-  width: 100%;
+  width: auto;
 
+  @media (max-width: $desktop) {
+    left: 0;
+  }
   @media (max-width: $tablet) {
     padding: $spacing-md;
   }
